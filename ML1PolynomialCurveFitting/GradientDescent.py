@@ -15,6 +15,7 @@ def gradientDescent(n, X, T, lr, batch=1, targetAverageRSS=0.001, maxItrTimes=10
     mins = 1000
     batchX = []
     batchT = []
+    lastrss=sys.maxsize
     for i in range(maxItrTimes):
         for x, t in zip(X, T):
             batchX.append(x)
@@ -23,14 +24,19 @@ def gradientDescent(n, X, T, lr, batch=1, targetAverageRSS=0.001, maxItrTimes=10
             if count % batch == 0:
                 gradient = getGradient(batchT, W, batchX)
                 W = [w + lr * g / batch for w, g in zip(W, gradient)]
-                s = lsm(T, X, W, range=10, isaverage=True)
-                if s <targetAverageRSS:
-                    return s,W,s<0.001
-                print(count,s)
+                rss = lsm(T, X, W, range=10, isaverage=True)
+                if rss>lastrss:
+                    lr*=0.8
+                elif rss==lastrss:
+                    lr=lr+0.1
+                lastrss=rss
+                if rss <targetAverageRSS:
+                    return rss,W,rss<0.001
+                print("%d %.5f %f"%(count,lr,rss))
                 batchX = []
                 batchT = []
         # visualPoly(*[W, type], isShow=True)
-    return s, W, s < 0.01
+    return rss, W, rss < 0.01
 
 
 def getGradient(T, W, X):
@@ -43,8 +49,6 @@ def getGradient(T, W, X):
     W.reverse()
 
     return rW
-
-
 def standgetGradient(T, W, X):
     XX = mat([[x ** i for i in range(len(W))] for x in X])
     XXT = XX.T
@@ -57,8 +61,6 @@ def standgetGradient(T, W, X):
         assert abs(getGradient(T, W, X)[i] - standgetGradient.T.tolist()[0][i]) < 0.0001
 
     return gradient.T.tolist()[0]
-
-
 def lsm(T, X, W, range=-1, isaverage=False):
     sum = 0
     W.reverse()
@@ -73,11 +75,10 @@ def lsm(T, X, W, range=-1, isaverage=False):
     if isaverage:
         sum /= count
     return sum
-
 if __name__ == '__main__':
     dataNum=100
     n = 5
-    lr=0.01
+    lr=10
     maxItrTimes=100
     batch=1
 
