@@ -18,19 +18,19 @@ def conjugateGradient(n, X, T, lnLambada=None, limit=0.00000001, MaxIterationNum
 
     :return: 次数由低到高的权重向量，迭代次数
     """
-    dim = n + 1
+    lenW = n + 1
     if lnLambada == None:
 
         lambada = 0
+
     else:
         lambada = math.e ** lnLambada
 
-    XX = mat([[x ** i for i in range(dim)] for x in X])
+    XX = mat([[x ** i for i in range(lenW)] for x in X])
     vectorT = mat(T).T
-    # A = XX.T * XX 不带惩罚向
-    A = XX.T * XX + lambada * numpy.eye(dim)  # 带惩罚项
+    A = XX.T * XX + lambada * numpy.eye(lenW)  # 带惩罚项
     B = XX.T * vectorT
-    W = mat(zeros((dim, 1)))
+    W = mat(zeros((lenW, 1)))
     r = B - A * W
     p = r.copy()
     num = 0

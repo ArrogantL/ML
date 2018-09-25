@@ -15,23 +15,23 @@ def analyticalSolve(n, X, T, lnLambada=None):
     :param lnLambada:  lambada的以自然数为底的对数，如果设为1000则表示不设只lambada
     :return: 解析解拟合的次数由低到高的权重向量
     '''
-    dim = n + 1
+    lenW = n + 1
     if lnLambada == None:
 
         lambada = 0
     else:
         lambada = math.e ** lnLambada
 
-    XX = mat([[x ** i for i in range(dim)] for x in X])
+    XX = mat([[x ** i for i in range(lenW)] for x in X])
     vectorT = mat(T).T
     # print(XX,XX.max())
 
     XXT = XX.T
-    return ((lambada * numpy.eye(dim) + XXT * XX).I * XXT * vectorT).T.tolist()[0]
+    return ((lambada * numpy.eye(lenW) + XXT * XX).I * XXT * vectorT).T.tolist()[0]
 
 
 if __name__ == '__main__':
-    X, T = generateData(20)
+    X, T = generateData(10)
     W1 = analyticalSolve(9, X, T)
     W2 = analyticalSolve(9, X, T, lnLambada=None)
     W3 = analyticalSolve(9, X, T, lnLambada=0)

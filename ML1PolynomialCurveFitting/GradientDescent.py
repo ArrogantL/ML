@@ -1,14 +1,14 @@
 import sys
 
 import numpy
-from numpy import logspace
+from numpy import logspace, math
 from numpy import mat, polyval
 
 from DataGenerator import generateData
-from Visualization import visualResultAndSampleAndTarget
+from Visualization import visualResultAndSampleAndTarget, visualPoly
 
 
-def gradientDescent(n, X, T, lr, batch=1, maxItrTimes=10,targetAverageRSS=5*10**-4):
+def gradientDescent(n, X, T, lr, batch=1, lnLambada=None,maxItrTimes=10, targetAverageRSS=5 * 10 ** -4):
     """
     梯度下降法多项式拟合
     :param n:
@@ -21,6 +21,11 @@ def gradientDescent(n, X, T, lr, batch=1, maxItrTimes=10,targetAverageRSS=5*10**
     :return: W，次数由低到高
     """
     wSize = n + 1
+    if lnLambada == None:
+
+        lambada = 0
+    else:
+        lambada = math.e ** lnLambada
     count = 0
     W = [5 for i in range(wSize)]
     mins = 1000
@@ -34,10 +39,10 @@ def gradientDescent(n, X, T, lr, batch=1, maxItrTimes=10,targetAverageRSS=5*10**
             count += 1
             if count % batch == 0:
                 gradient = getGradient(batchT, W, batchX)
-                W = [w + lr * g / batch for w, g in zip(W, gradient)]
+                W = [w +w*lambada/batch+ lr * g / batch for w, g in zip(W, gradient)]
                 rss = RSS(T, X, W, range=10, isaverage=True)
 
-                if rss <= targetAverageRSS :
+                if rss <= targetAverageRSS:
                     return rss, W
 
                 print("%d %f %e" % (count, lr, rss))
@@ -97,14 +102,16 @@ def RSS(T, X, W, range=-1, isaverage=False):
 
 
 if __name__ == '__main__':
-    dataNum = 5
+    dataNum = 10
     n = 9
-    lr = 1.1
+    lr = 0.00001
     maxItrTimes = sys.maxsize
-    batch = 5
-
+    batch = dataNum
+    lnLambda=-5
     X, T = generateData(dataNum)
 
-    e, resultW = gradientDescent(n, X, T, lr, batch=batch,
+    e, resultW = gradientDescent(n, X, T, lr,lnLambada=lnLambda, batch=batch,
                                  maxItrTimes=maxItrTimes)
-    visualResultAndSampleAndTarget(resultW, X, T)
+    visualPoly(resultW,"λ e^%.0f"%(lnLambda), X=X, T=T,
+               title="%s poly%d datanum%d lr%.3f batch%d" % ("gradientDescent", n, dataNum, lr, batch), isShow=True,
+               savePath="DataGif/GradientDescent/")

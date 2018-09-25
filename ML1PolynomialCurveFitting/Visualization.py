@@ -5,12 +5,14 @@ import numpy
 from numpy import polyval, math, sin
 
 
-def visualPoly(*WsandLabels,X=None,T=None,title="Data Graph",savePath="None",isShow=False):
+def visualPoly(*WsandLabels,X=[],T=[],title="Data Graph",savePath="None",isShow=False):
     """
+    多曲线展示，可添加样本点
     :param WsandLabels: 按次数由低到高排列，先W，全部W输入后接入按顺序接入labels
     :return:
     """
     t=len(WsandLabels)//2
+    print(len(WsandLabels))
     assert t*2==len(WsandLabels)
     cmap = plt.get_cmap('viridis')
     colors = cmap(numpy.linspace(0, 1, t))

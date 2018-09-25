@@ -34,8 +34,8 @@ def solutionTest(func,ns, dataNum, lnLambdas=[],SavePath=""):
             for k in range(len(lnLambdas)):
 
                 rW.append(list[i][j][k])
-                labels.append("ln%.0f"%(lnLambdas[k]))
+                labels.append("λ e^%.0f"%(lnLambdas[k]))
             visualPoly(*rW, *labels, title="%s poly%d datanum%d"%(func.__name__,ns[i],dataNum[j]), savePath=SavePath)
 
 if __name__ == '__main__':
-    solutionTest(conjugateGradient,[5,7,9,15],[5,10,20],[-99999999,-18,0],SavePath="DataGif/conjugateGradient/")
+    solutionTest(gradientDescent,[5,7,9,15],[5,10,20],[-99999999,-18,0],SavePath="DataGif/GradientDescent/")
