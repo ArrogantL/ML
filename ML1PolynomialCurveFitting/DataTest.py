@@ -3,7 +3,7 @@ import math
 from AnalyticalSolution import analyticalSolve
 from ConjugateGradient import conjugateGradient
 from DataGenerator import generateData
-from GradientDescent import lsm, gradientDescent
+from GradientDescent import RSS, gradientDescent
 from Visualization import visualPoly
 
 
@@ -19,14 +19,14 @@ def solutionTest(func,ns, dataNum, lnLambdas=[],SavePath=""):
             testX,testT=generateData(lx//2)
             if len(lnLambdas)==0:
                 W = func(i, X, T)
-                print("%d;%d;None;%r"%(i,lx,lsm(testT,testX,W)/len(testX)))
+                print("%d;%d;None;%r" % (i, lx, RSS(testT, testX, W) / len(testX)))
                 listx.append(W)
             else:
                 for lnLambda in lnLambdas:
 
                     W = analyticalSolve(i, X, T,lnLambda)
                     listx.append(W)
-                    print("%d;%d;%.0f;%r" % (i, lx,lnLambda, lsm(testT,testX,W)/len(testX)))
+                    print("%d;%d;%.0f;%r" % (i, lx, lnLambda, RSS(testT, testX, W) / len(testX)))
     for i in range(len(ns)):
         for j in range(len(dataNum)):
             rW = []

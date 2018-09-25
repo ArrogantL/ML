@@ -1,21 +1,32 @@
 import sys
 
-import matplotlib.pyplot as plt
 import numpy
-from numpy import polyval, logspace, mat, math
+from numpy import logspace
+from numpy import mat, polyval
 
 from DataGenerator import generateData
-from Visualization import visualPoly
+from Visualization import visualResultAndSampleAndTarget
 
 
-def gradientDescent(n, X, T, lr, batch=1, targetAverageRSS=0.001, maxItrTimes=10):
+def gradientDescent(n, X, T, lr, batch=1, maxItrTimes=10,targetAverageRSS=5*10**-4):
+    """
+    梯度下降法多项式拟合
+    :param n:
+    :param X:
+    :param T:
+    :param lr:
+    :param batch:
+    :param maxItrTimes: 最大迭代次数，默认为sys.maxsize
+    :param targetAverageRSS: 目标RSS均值，到达时停止迭代
+    :return: W，次数由低到高
+    """
     wSize = n + 1
     count = 0
     W = [5 for i in range(wSize)]
     mins = 1000
     batchX = []
     batchT = []
-    lastrss=sys.maxsize
+
     for i in range(maxItrTimes):
         for x, t in zip(X, T):
             batchX.append(x)
@@ -24,19 +35,16 @@ def gradientDescent(n, X, T, lr, batch=1, targetAverageRSS=0.001, maxItrTimes=10
             if count % batch == 0:
                 gradient = getGradient(batchT, W, batchX)
                 W = [w + lr * g / batch for w, g in zip(W, gradient)]
-                rss = lsm(T, X, W, range=10, isaverage=True)
-                if rss>lastrss:
-                    lr*=0.8
-                elif rss==lastrss:
-                    lr=lr+0.1
-                lastrss=rss
-                if rss <targetAverageRSS:
-                    return rss,W,rss<0.001
-                print("%d %.5f %f"%(count,lr,rss))
+                rss = RSS(T, X, W, range=10, isaverage=True)
+
+                if rss <= targetAverageRSS :
+                    return rss, W
+
+                print("%d %f %e" % (count, lr, rss))
                 batchX = []
                 batchT = []
         # visualPoly(*[W, type], isShow=True)
-    return rss, W, rss < 0.01
+    return rss, W
 
 
 def getGradient(T, W, X):
@@ -49,7 +57,16 @@ def getGradient(T, W, X):
     W.reverse()
 
     return rW
+
+
 def standgetGradient(T, W, X):
+    """
+    样例梯度下降，测试代码正确性用，不属于实验内容
+    :param T:
+    :param W:
+    :param X:
+    :return:
+    """
     XX = mat([[x ** i for i in range(len(W))] for x in X])
     XXT = XX.T
     vectorW = mat(W).T
@@ -61,7 +78,9 @@ def standgetGradient(T, W, X):
         assert abs(getGradient(T, W, X)[i] - standgetGradient.T.tolist()[0][i]) < 0.0001
 
     return gradient.T.tolist()[0]
-def lsm(T, X, W, range=-1, isaverage=False):
+
+
+def RSS(T, X, W, range=-1, isaverage=False):
     sum = 0
     W.reverse()
     count = 0
@@ -75,16 +94,17 @@ def lsm(T, X, W, range=-1, isaverage=False):
     if isaverage:
         sum /= count
     return sum
+
+
 if __name__ == '__main__':
-    dataNum=100
-    n = 5
-    lr=10
-    maxItrTimes=100
-    batch=1
+    dataNum = 5
+    n = 9
+    lr = 1.1
+    maxItrTimes = sys.maxsize
+    batch = 5
 
     X, T = generateData(dataNum)
 
-    e, resultW, b = gradientDescent(n, X, T, lr, batch=batch, maxItrTimes=maxItrTimes)
-    visualPoly(*[resultW, "test"], title="%s poly%d datanum%d lr%.3f maxIrt%d batch%d"%("gradientDescent",n,dataNum,lr,maxItrTimes,batch),savePath="DataGif/GradientDescent/",isShow=True)
-    # plt.plot(X, T, 'r*', linewidth=2)
-    # plt.show()
+    e, resultW = gradientDescent(n, X, T, lr, batch=batch,
+                                 maxItrTimes=maxItrTimes)
+    visualResultAndSampleAndTarget(resultW, X, T)

@@ -1,35 +1,33 @@
 import math
-
+from Visualization import visualResultAndSampleAndTarget
 import matplotlib.pyplot as plt
 import numpy
 from numpy import mat, polyval, zeros
 
-from AnalyticalSolution import analyticalSolve
 from DataGenerator import generateData
-from GradientDescent import lsm
 
 
-def conjugateGradient(n,X, T, lnLambada=None,limit=0.00000001, MaxIterationNum=100):
+def conjugateGradient(n, X, T, lnLambada=None, limit=0.00000001, MaxIterationNum=100):
     """
-    :param n 多项式次数，注意多项式次数是len(W)-1
-    :param X: 训练数据
-    :param T: 训练数据
-    :param limit:  当r=B-AW的内积rT*r小于limit时停止迭代
-    :param lnLambada 惩罚参数的以e为底的对数，控制岭回归惩罚力度
+    :param n 多项式次数
+    :param X: 训练数据x
+    :param T: 训练数据t
+    :param limit:  当残差r=B-AW的内积rT*r小于limit时停止迭代
+    :param lnLambada 惩罚参数的以e为底的对数，控制岭回归惩罚力度，若取None则不带惩罚项
     :param MaxIterationNum: 最大迭代次数
 
-    :return: 参数，迭代次数
+    :return: 次数由低到高的权重向量，迭代次数
     """
-    dim = n+1
+    dim = n + 1
     if lnLambada == None:
 
-        lambada=0
+        lambada = 0
     else:
         lambada = math.e ** lnLambada
 
     XX = mat([[x ** i for i in range(dim)] for x in X])
     vectorT = mat(T).T
-    # A = XX.T * XX
+    # A = XX.T * XX 不带惩罚向
     A = XX.T * XX + lambada * numpy.eye(dim)  # 带惩罚项
     B = XX.T * vectorT
     W = mat(zeros((dim, 1)))
@@ -50,14 +48,9 @@ def conjugateGradient(n,X, T, lnLambada=None,limit=0.00000001, MaxIterationNum=1
 
 
 if __name__ == '__main__':
-    X, T = generateData(4)
-    W, num = conjugateGradient(9,X, T,lnLambada=-10)
-    print(num)
-    x = numpy.arange(0, 1, 0.001)
-    s=list(W)
-    s.reverse()
-    y = polyval(s, x)
-    plt.plot(x, y, 'r-', linewidth=2)
-    plt.show()
+    X, T = generateData(10)
+    W, num = conjugateGradient(9, X, T, lnLambada=None)
+
+    visualResultAndSampleAndTarget(W,X,T)
     # plt.plot(X, T, 'r*', linewidth=2)
 # plt.show()

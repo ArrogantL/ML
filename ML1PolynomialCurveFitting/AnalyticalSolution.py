@@ -1,25 +1,24 @@
 import math
 
-import matplotlib.pyplot as plt
 import numpy
-from numpy import mat, polyval
+from numpy import mat
 
 from DataGenerator import generateData
-from Visualization import visualPoly
+from Visualization import visualPoly, visualResultAndSampleAndTarget
 
 
 def analyticalSolve(n, X, T, lnLambada=None):
     '''
-    :param n:
-    :param X:
-    :param T:
+    :param n:多项式次数
+    :param X:样本自变量x
+    :param T:样本因变量t
     :param lnLambada:  lambada的以自然数为底的对数，如果设为1000则表示不设只lambada
-    :return:
+    :return: 解析解拟合的次数由低到高的权重向量
     '''
     dim = n + 1
     if lnLambada == None:
 
-        lambada=0
+        lambada = 0
     else:
         lambada = math.e ** lnLambada
 
@@ -34,8 +33,8 @@ def analyticalSolve(n, X, T, lnLambada=None):
 if __name__ == '__main__':
     X, T = generateData(20)
     W1 = analyticalSolve(9, X, T)
-    W2 = analyticalSolve(9, X, T, lnLambada=-18)
+    W2 = analyticalSolve(9, X, T, lnLambada=None)
     W3 = analyticalSolve(9, X, T, lnLambada=0)
-    visualPoly(W1,W2,W3,"ln1000","ln1","ln0",title="lndiffer",savePath="")
+    visualPoly(W1, W2, W3, "no lambda", "ln1", "ln0", X=X,T=T,title="lndiffer", isShow=True,savePath="None")
     # plt.plot(X, T, 'r*', linewidth=2)
 # plt.show()
