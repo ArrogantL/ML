@@ -1,10 +1,10 @@
 import math
-from Visualization import visualResultAndSampleAndTarget
-import matplotlib.pyplot as plt
+
 import numpy
-from numpy import mat, polyval, zeros
+from numpy import mat, zeros
 
 from DataGenerator import generateData
+from Visualization import visualResultAndSampleAndTarget
 
 
 def conjugateGradient(n, X, T, lnLambada=None, limit=0.00000001, MaxIterationNum=100):
@@ -51,6 +51,6 @@ if __name__ == '__main__':
     X, T = generateData(10)
     W, num = conjugateGradient(9, X, T, lnLambada=None)
 
-    visualResultAndSampleAndTarget(W,X,T)
+    visualResultAndSampleAndTarget(W, X, T)
     # plt.plot(X, T, 'r*', linewidth=2)
 # plt.show()
