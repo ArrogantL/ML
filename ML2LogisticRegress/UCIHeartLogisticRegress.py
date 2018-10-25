@@ -1,7 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
 
-from DataGenerator import *
 from LogisticRegress import *
 
 
@@ -13,10 +11,13 @@ def processUCIheart():
     X_train, X_test, y_train, y_test = train_test_split(XX, Y, test_size=0.25, random_state=0)  # 随机选择25%作为测试集，剩余作为训练集
     tmp=pd.DataFrame(X_train)
     tmp['y']=y_train
-    print(tmp)
-    W, loss = newtonLogisticRegress(X_train, y_train, punishment=0)
-    print("accuracy on train_data:%f" % accuracy(W, X_train, y_train))
-    print("accuracy on test_data:%f" % accuracy(W, X_test, y_test))
+    print("punishment\taccuracy_in_Train\taccuracy_in_Test")
+
+    for punishment in range(20):
+        punishment=punishment/10
+        W, loss = newtonLogisticRegress(X_train, y_train, punishment=punishment)
+        print("%.1f\t%f\t%f" %(punishment,accuracy(W, X_train, y_train),accuracy(W, X_test, y_test)) )
+
 
 
 def preprocessData():

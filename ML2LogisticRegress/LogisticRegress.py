@@ -1,9 +1,8 @@
-import numpy as np
+from matplotlib import *
 from numpy import *
+from sklearn.model_selection import train_test_split
 
 from DataGenerator import *
-from matplotlib import *
-import matplotlib.pyplot as plt
 
 
 def quasiNewtonLogisticRegress(XX, y):
@@ -40,30 +39,22 @@ def quasiHessianI(dg, dW, B):
 
 
 def newtonLogisticRegress(XX, y, punishment=0):
-    """
-    XX中的X要求第一个维度是1,为方便运算。每行一个X
-    :param XX:
-    :param y:
-    :return:
-    """
-    XX=appendOne(XX)
+    XX = appendOne(XX)
     assert len(XX) == len(y)
     # 初始化W
     W = zeros((1, len(XX[0]))).T
     tmp = sys.maxsize
-    i=0
+    i = 0
     while True:
         gradient = gradientOfLogisticRegres(W, XX, y, punishment=punishment)
         hessianI = hessianOfLogisticRegress(W, XX, punishment=punishment).I
         delta = -hessianI * gradient
-
         loss = -gradient.T * hessianI * gradient
-
-        print("Round Loss %d : %f"%(i,loss))
-        if abs(loss[0, 0] / 2) < 10**-10:
+        # print("Round Loss %d : %f"%(i,loss))
+        if abs(loss[0, 0] / 2) < 10 ** -10:
             break
         W += delta
-        i+=1
+        i += 1
     return W, loss
 
 
@@ -101,12 +92,14 @@ def gradientOfLogisticRegres(W, XX, y, punishment):
 
 
 def accuracy(W, XX, Y):
-    tmpXX=appendOne(XX)
+    tmpXX = appendOne(XX)
     sum = 0
     for i in range(len(Y)):
         if (dot(tmpXX[i], W) > 0 and Y[i] == 1) or (dot(tmpXX[i], W) < 0 and Y[i] == 0):
             sum += 1
     return sum / len(Y)
+
+
 def appendOne(XX):
     tmpXX = []
     for X in XX:
@@ -116,56 +109,42 @@ def appendOne(XX):
         tmpXX.append(tmpX)
     XX = tmpXX
     return XX
+
+
 def test():
-    # W = [1, 5, 4]
-    # XX = [[1, 2, 5], [1, 9, 3]]
-    # hessian = hessianOfLogisticRegress(W, X)
-    # W2,loss=newtonLogisticRegress(XX,[0,1],0.00001)
+    #正常情况
+    #XX, Y = generateData(50, 5, u2u=False, s2k=True,type="normal")
+    #S与y有关
+    #XX, Y = generateData(50, 5, u2u=False, s2k=True)
+    #X特征之间不再相互独立
+    #XX, Y = generateData(50, 5, u2u=True, s2k=False)
+    #不是正太分布
+    #XX, Y = generateData(50, 5, u2u=True, s2k=False,type="beta")
+    # XX, Y = generateData(50, 5, u2u=True, s2k=False,type="binomial")
+    #XXTrain, XXTest, YTrain, YTest = train_test_split(XX, Y, test_size=0.25, random_state=0)  # 随机选择25%作为测试集，剩余作为训练集
 
-    XX, Y = generateData(50, 5, u2k=True, s2k=True)
-
-    XXTrain = XX[0:len(XX) // 4]
-    YTrain = Y[0:len(Y) // 4]
-    XXTest = XX[len(XX) // 4:len(XX) // 2]
-    YTest = Y[len(Y) // 4:len(Y) // 2]
-    XXF = XX[len(XX) // 2:len(XX)]
-    YF = Y[len(Y) // 2:len(Y)]
-
-    grid = [0, 1, 5, 10, 20, 50, 100, 200, 500]
-    ac = 0
-    af = 0
-    for punishment in grid:
-
-        W, loss = newtonLogisticRegress(XXTrain, YTrain, punishment=punishment)
-
-        tmp = accuracy(W, XXTest, YTest)
-
-        ac = tmp
-        acW = W
-        acP = punishment
+    grid = [0, 1, 5, 10, 20, 50, 100, 200, 500,5000,50000]
+    print("Round\taverage_accuracy_in_Train\taverage_accuracy_in_Test")
+    acTrain=0
+    acTest=0
+    for i in range(1000):
+        i+=1
 
 
-        af = tmp
-        afW = W
-        afP = punishment
+        XX, Y = generateData(50, 3, u2u=False, s2k=False, type="beta")
+        XXTrain, XXTest, YTrain, YTest = train_test_split(XX, Y, test_size=0.25, random_state=0)  # 随机选择25%作为测试集，剩余作为训练集
 
 
-        print(acP, ac, accuracy(acW, XXF, YF), end="##")
-        print(afP, af, accuracy(afW, XXF, YF))
+        try:
+            W, loss = newtonLogisticRegress(XXTrain, YTrain, punishment=0)
+        except:
+            continue
+        f = accuracy(W, XXTrain, YTrain)
+        values = accuracy(W, XXTest, YTest)
+        acTrain += f
+        acTest+=values
+        print("%d\t%f\t%f\t"%(i, acTrain/i, acTest/i))
 
-
-    """
-    for i in range(len(Y)):
-
-        if Y[i] == 1:
-
-            plt.scatter(XX[i][1], XX[i][2], s=75, c='G', alpha=.5)
-        else:
-            plt.scatter(XX[i][1], XX[i][2], s=75, c='R', alpha=.5)
-    X = numpy.arange(-20, 20, 0.01)
-    plt.scatter(X,[-W[0]/W[2]-W[1]*x/W[2] for x in X] ,0.1)
-    plt.show()
-    """
 
 if __name__ == '__main__':
     test()
