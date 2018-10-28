@@ -37,6 +37,43 @@ def quasiNewtonLogisticRegress(XX, y):
 def quasiHessianI(dg, dW, B):
     return B + (dg - B * dW) * dW.T / (dW.T * dW)
 
+def gradientDescent(XX, Y,lr,batch=1,maxRound=100,lambada=0,punishment=0):
+    """
+    梯度下降法拟合
+    """
+
+    XX = appendOne(XX)
+    assert len(XX) == len(Y)
+    # 初始化W
+    W = zeros((1, len(XX[0]))).T
+    count = 0
+
+    batchXX = []
+    batchY = []
+    bestW=W
+    bestAccuracy=0
+    for i in range(100):
+        for X, y in zip(XX, Y):
+            batchXX.append(X)
+            batchY.append(y)
+            count += 1
+            if count % batch == 0:
+                gradient = gradientOfLogisticRegres(W, batchXX, batchY, punishment=punishment)
+                W+=gradient
+                f = accuracy(W, XX, Y, isAppendOne=False)
+                if f>bestAccuracy:
+                    bestAccuracy=f
+                    bestW=W
+
+
+                print("%d %f %e" % (count, f, abs(gradient.T * gradient)))
+
+                if abs(gradient.T*gradient) <= 0.00000001:
+                    break
+                batchXX = []
+                batchY = []
+
+    return bestAccuracy,bestW
 
 def newtonLogisticRegress(XX, y, punishment=0):
     XX = appendOne(XX)
@@ -91,13 +128,42 @@ def gradientOfLogisticRegres(W, XX, y, punishment):
     return gradient.T
 
 
-def accuracy(W, XX, Y):
-    tmpXX = appendOne(XX)
-    sum = 0
+def accuracy(W, XX, Y,type=0,isAppendOne=True):
+    tmpXX=XX
+    if isAppendOne:
+        tmpXX = appendOne(XX)
+
+    TP = 0
+    TN=0
+    FP=0
+    FN=0
     for i in range(len(Y)):
-        if (dot(tmpXX[i], W) > 0 and Y[i] == 1) or (dot(tmpXX[i], W) < 0 and Y[i] == 0):
-            sum += 1
-    return sum / len(Y)
+
+
+        if dot(tmpXX[i], W) > 0 :
+            if  Y[i] == 1 :
+                TP += 1
+            else:
+                FP+=1
+        if dot(tmpXX[i], W) < 0 :
+            if Y[i] == 0:
+                TN+=1
+            else:
+                FN+=1
+    assert TP+FP+TN+FN==len(Y)
+    if type==0:
+        return (TP+TN)/len(Y)
+    elif type==1:
+        return TP/(TP+FP)
+    elif type==2:
+        return TP/(TP+FN)
+    elif type==3:
+        return ((TP+TN)/len(Y),TP/(TP+FP),TP/(TP+FN))
+    else:
+        return None
+
+
+
 
 
 def appendOne(XX):
@@ -109,6 +175,7 @@ def appendOne(XX):
         tmpXX.append(tmpX)
     XX = tmpXX
     return XX
+
 
 
 def test():
@@ -129,12 +196,8 @@ def test():
     acTest=0
     for i in range(1000):
         i+=1
-
-
         XX, Y = generateData(50, 3, u2u=False, s2k=False, type="beta")
         XXTrain, XXTest, YTrain, YTest = train_test_split(XX, Y, test_size=0.25, random_state=0)  # 随机选择25%作为测试集，剩余作为训练集
-
-
         try:
             W, loss = newtonLogisticRegress(XXTrain, YTrain, punishment=0)
         except:
@@ -148,3 +211,5 @@ def test():
 
 if __name__ == '__main__':
     test()
+
+
