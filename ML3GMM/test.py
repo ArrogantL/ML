@@ -1,3 +1,9 @@
+from numpy import *
+from numpy.linalg import det
+
+from DataGenerator import generateData
+import matplotlib.pyplot as plt
+
 if __name__ == '__main__':
-    X=[1,1,3,4,5]
-    print(min((X[i] ,i) for i in range(len(X))))
+    X=mat(zeros((3,3)))
+    print(X.T*X)

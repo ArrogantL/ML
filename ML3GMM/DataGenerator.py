@@ -1,7 +1,7 @@
 from numpy.random import *
 
 
-def generateData(num, feature_num, u2u=False, s2k=False, type="normal"):
+def generateData(num, feature_num):
     """
 
     :param num:数据量
@@ -13,46 +13,13 @@ def generateData(num, feature_num, u2u=False, s2k=False, type="normal"):
     """
     XX = []
     Y = []
-    feature = []
-
-    for j in range(feature_num):
-        feature.append((randint(10), randint(10), randint(10), randint(10)))
-
     for i in range(num):
-        rint = randint(0, 2)
-        X = []
-        for j in range(feature_num):
-            if j == 0:
-                tmp = 0
-            else:
-                tmp = u2u
-            if type == "normal":
-                if rint == 1:
-                    X.append(normal(feature[j][0] + tmp * feature[j - 1][0], feature[j][2] + tmp * feature[j - 1][2]))
-                else:
-                    X.append(normal(feature[j][1] + tmp * feature[j - 1][1],
-                                    feature[j][2 + s2k] + tmp * feature[j - 1][2 + s2k]))
-            elif type == "binomial":
-                if rint == 1:
-                    X.append(binomial(feature[j][0],
-                                      feature[j][2]/10  ))
-                else:
-                    X.append(binomial(feature[j][1] ,
-                                      feature[j][2 ] /10))
-            elif type == "beta":
-                if rint == 1:
-                    X.append(beta(abs(feature[j][0])+1,
-                                  abs(feature[j][2] ) +1))
-                else:
-                    X.append(beta(abs(feature[j][1]+1 ),
-                                      abs(feature[j][2])+1 ))
-            else:
-                return None
-
-            XX.append(X)
-            Y.append(rint)
-
+        if randint(0, 2) == 0:
+            XX.append(multivariate_normal([1, 1], [[0.1, 0], [0, 0.1]]))
+        else:
+            XX.append(multivariate_normal([-1, -1], [[0.1, 0], [0, 0.1]]))
     return XX, Y
+
 
 if __name__ == '__main__':
     XX, Y = generateData(10, 100, True, False, "binomial")
