@@ -1,7 +1,7 @@
 from numpy import *
 from numpy.linalg import det
 
-from DataGenerator import generateData
+from DataGenerator import generateTwoDimensionalData
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
