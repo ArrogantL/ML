@@ -6,15 +6,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d8d15dd-de13-4a92-ab70-d3c4da6bfe86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/iris.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/motified_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ML4PCA/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ML4PCA/DataGenerator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ML4PCA/PCA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ML4PCA/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/DataGenerator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ML2LogisticRegress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML2LogisticRegress/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GMM.py" beforeDir="false" afterPath="$PROJECT_DIR$/GMM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kmeans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +25,13 @@
     <session id="61812956">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -67,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="126" column="18" lean-forward="true" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="18" />
+            <state relative-caret-position="909">
+              <caret line="126" column="18" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="18" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <marker date="1541303067468" expanded="true" signature="470:471" ph="..." />
@@ -80,80 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Kmeans.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <marker date="1541304207636" expanded="true" signature="853:854" ph="..." />
-                <marker date="1541304207636" expanded="true" signature="853:1094" ph="..." />
-                <marker date="1541304207636" expanded="true" signature="1120:1125" ph="..." />
-                <marker date="1541304207636" expanded="true" signature="1261:1262" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.7/site-packages/pandas/core/indexes/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66308">
-              <caret line="3077" selection-start-line="3077" selection-end-line="3077" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/iris.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3300">
-              <caret line="150" column="30" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.7/site-packages/sklearn/utils/validation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4664">
-              <caret line="229" selection-start-line="229" selection-end-line="229" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.7/site-packages/sklearn/model_selection/_split.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45188">
-              <caret line="2073" selection-start-line="2073" selection-end-line="2073" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.7/site-packages/pandas/core/indexing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28666">
-              <caret line="1326" selection-start-line="1326" selection-end-line="1326" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.7/site-packages/numpy/matrixlib/defmatrix.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18260">
-              <caret line="830" selection-start-line="830" selection-end-line="830" />
+            <state relative-caret-position="374">
+              <caret line="17" column="57" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -198,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="985" />
     <option name="y" value="27" />
     <option name="width" value="935" />
@@ -366,7 +295,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="27" width="1869" height="1053" extended-state="6" />
+    <frame x="985" y="27" width="935" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2489154" />
@@ -435,9 +364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -511,17 +437,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGenerator.py">
+    <entry file="file://$PROJECT_DIR$/Kmeans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        <state>
+          <caret selection-end-line="4" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1541304207636" expanded="true" signature="853:854" ph="..." />
+            <marker date="1541304207636" expanded="true" signature="853:1094" ph="..." />
+            <marker date="1541304207636" expanded="true" signature="1120:1125" ph="..." />
+            <marker date="1541304207636" expanded="true" signature="1261:1262" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GMM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="126" column="18" lean-forward="true" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="18" />
+        <state relative-caret-position="909">
+          <caret line="126" column="18" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="18" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <marker date="1541303067468" expanded="true" signature="470:471" ph="..." />
@@ -531,17 +464,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Kmeans.py">
+    <entry file="file://$PROJECT_DIR$/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1541304207636" expanded="true" signature="853:854" ph="..." />
-            <marker date="1541304207636" expanded="true" signature="853:1094" ph="..." />
-            <marker date="1541304207636" expanded="true" signature="1120:1125" ph="..." />
-            <marker date="1541304207636" expanded="true" signature="1261:1262" ph="..." />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="17" column="57" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="57" />
         </state>
       </provider>
     </entry>
