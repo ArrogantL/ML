@@ -4,22 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/GMM.py" description="vars=[random.rand()]*k" line="28" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d8d15dd-de13-4a92-ab70-d3c4da6bfe86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TEMP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../numpy/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../numpy/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../numpy/.idea/numpy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../numpy/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../numpy/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../numpy/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML3GMM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML3GMM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML3GMM/GMM.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML3GMM/GMM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML4PCA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML4PCA/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/DataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML4PCA/Mnist.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/Mnist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML4PCA/PCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/PCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML4PCA/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/test.py" afterDir="false" />
-    </list>
+    <list default="true" id="1d8d15dd-de13-4a92-ab70-d3c4da6bfe86" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +53,7 @@
     <session id="1225676002">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.22" value="1" />
@@ -209,7 +194,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="985" />
     <option name="y" value="27" />
     <option name="width" value="925" />
@@ -396,7 +381,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="27" width="1869" height="1053" extended-state="7" />
+    <frame x="51" y="27" width="1869" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24725275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
