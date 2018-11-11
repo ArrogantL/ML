@@ -1,8 +1,8 @@
 from numpy import *
 from numpy import linalg
 import matplotlib.pyplot as plt
-
-from DataGenerator import generateData
+from mpl_toolkits.mplot3d import Axes3D
+from DataGenerator import generateData,generateThiDimensionalData
 
 
 def pca(datamatrix, pcnum):
@@ -22,20 +22,28 @@ def pca(datamatrix, pcnum):
     vals, vects = linalg.eig(datacov)
     indexs = argsort(vals)
     indexs = indexs[len(indexs) - pcnum:len(indexs)]
+    # 列向量
     topdvects = vects[:, indexs]
     # 数据转到新空间
     lowD = remeaneddata * topdvects
     newD = lowD * topdvects.T + meanmatrix
-    return lowD, newD,topdvects
+    return lowD.A, newD.A,topdvects.A
 
 
 if __name__ == '__main__':
-    D, X, T, R = generateData(100, mean=10, var=0.02)
+    # D  = generateData(num=200)
+    D = generateThiDimensionalData(num=200)
     lowD, newD,topdvects = pca(mat(D), 2)
-    A = []
-    B = []
-    for X in newD:
-        A.append(X[0, 0])
-        B.append(X[0, 1])
-    plt.plot(A, B, 'r*', linewidth=2)
+    A = newD[:,0]
+    B = newD[:,1]
+    C = newD[:, 2]
+    # plt.plot(A, B, 'r*', linewidth=2)
+    # plt.show()
+    colors = ['blue', 'red', 'black', 'green']
+    ax = plt.subplot(111, projection='3d')  # 创建一个三维的绘图工程
+    ax.scatter(newD[:, 0], newD[:, 1], newD[:, 2], s=75, c="blue",
+               alpha=0.5)  # 绘制数据点
+    ax.set_zlabel('Z')  # 坐标轴
+    ax.set_ylabel('Y')
+    ax.set_xlabel('X')
     plt.show()

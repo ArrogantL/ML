@@ -19,13 +19,14 @@ def gaussianMixtureModel(XX, k):
     """
     #  convert list X to column vector X
     tmp = []
+
     for X in XX:
         tmp.append(mat(X).T)
     XX = tmp
     D = len(XX[0])
     # start: random model:P(K) means vars,Attention：mean[i]!=mean[j] for any i!=j,
     # otherwise they will get the same parameters during the iteration.
-    means = [mat([i]).T for i in range(k)]
+    means = [mat([i]*D).T for i in range(k)]
     vars = [mat(eye(D))] * k
     pk = [1 / k] * k
     # P(K|X) rowX columnK
@@ -93,6 +94,7 @@ def calPKX(pk, means, vars, X, k):
         var = vars[i]
         try:
             # use log to ease overflow
+            assert linalg.det(var) >= 0
             lgpxi = log(pk[i] * power((2 * math.pi), -len(X) / 2) * power(det(var), -1 / 2)) + (-1 / 2 * (X - mean).T * var.I * (X - mean))
             lgpxilist.append(lgpxi)
         except numpy.linalg.linalg.LinAlgError:
@@ -173,9 +175,9 @@ def processUCIheart():
     X_train, X_test, y_train, y_test = train_test_split(XX, Y, test_size=0.25, random_state=0)  # 随机选择25%作为测试集，剩余作为训练集
 
     pk, means, vars, TPtest = GMMandAnalyze(X_train, X_test, y_test, 3)
-    pk, means, vars, TPtrain = GMMandAnalyze(X_train, X_test, y_test, 3)
+    pk, means, vars, TPtrain = GMMandAnalyze(X_train, X_train, y_train, 3)
     print("TPtrain,TPtest,len(X_train),len(X_test)=",TPtrain,TPtest,len(X_train),len(X_test))
-
+    # TPtrain,TPtest,len(X_train),len(X_test)= 98 35 112 38
 
 def preprocessData():
     """
@@ -186,5 +188,5 @@ def preprocessData():
 
 if __name__ == '__main__':
     # preprocessData()
-    # processUCIheart()
-    twoDimensionalClusterDisplay()
+    processUCIheart()
+    # twoDimensionalClusterDisplay()

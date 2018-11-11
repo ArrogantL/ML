@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/GMM.py" description="means=[random.rand()]*k" line="27" />
-    <bookmark url="file://$PROJECT_DIR$/GMM.py" description="vars=[random.rand()]*k" line="28" />
+    <bookmark url="file://$PROJECT_DIR$/GMM.py" description="means=[random.rand()]*k" line="28" />
+    <bookmark url="file://$PROJECT_DIR$/GMM.py" description="vars=[random.rand()]*k" line="29" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d8d15dd-de13-4a92-ab70-d3c4da6bfe86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/DataGenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/PCA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML1PolynomialCurveFitting/DataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML2LogisticRegress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML2LogisticRegress/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ML3GMM22/TEMP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../numpy/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../numpy/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../numpy/.idea/numpy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../numpy/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../numpy/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../numpy/start.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GMM.py" beforeDir="false" afterPath="$PROJECT_DIR$/GMM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ML4PCA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ML4PCA/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/DataGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ML4PCA/Mnist.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/Mnist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ML4PCA/PCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/PCA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ML4PCA/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML4PCA/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,60 +31,85 @@
     <session id="61812956">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="2" />
-          <entry key="py" value="17" />
+          <entry key="py" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="17" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="csv" value="13" />
           <entry key="dummy" value="45" />
-          <entry key="py" value="5424" />
+          <entry key="py" value="5480" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="58" />
-          <entry key="Python" value="5424" />
+          <entry key="Python" value="5480" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GMM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="909">
-              <caret line="126" column="18" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="18" />
+            <state relative-caret-position="357">
+              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1541303067468" expanded="true" signature="470:471" ph="..." />
-                <marker date="1541303067468" expanded="true" signature="2363:2368" ph="..." />
-                <marker date="1541303067468" expanded="true" signature="2363:2413" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python3.7/site-packages/scipy/stats/_multivariate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10406">
+              <caret line="484" selection-start-line="484" selection-end-line="484" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Kmeans.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <marker date="1541304207636" expanded="true" signature="853:854" ph="..." />
+                <marker date="1541304207636" expanded="true" signature="853:1094" ph="..." />
+                <marker date="1541304207636" expanded="true" signature="1120:1125" ph="..." />
+                <marker date="1541304207636" expanded="true" signature="1261:1262" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -122,15 +153,15 @@
         <option value="$PROJECT_DIR$/data/motified_data.csv" />
         <option value="$PROJECT_DIR$/data/iris.csv" />
         <option value="$PROJECT_DIR$/DataGenerator.py" />
-        <option value="$PROJECT_DIR$/GMM.py" />
         <option value="$PROJECT_DIR$/Kmeans.py" />
+        <option value="$PROJECT_DIR$/GMM.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="985" />
     <option name="y" value="27" />
-    <option name="width" value="935" />
+    <option name="width" value="925" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -161,6 +192,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ML3GMM22" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -181,7 +213,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Kmeans">
+  <component name="RunManager" selected="Python.GMM">
     <configuration name="GMM" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ML3GMM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -274,8 +306,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Kmeans" />
         <item itemvalue="Python.GMM" />
+        <item itemvalue="Python.Kmeans" />
         <item itemvalue="Python.defmatrix" />
         <item itemvalue="Python.test" />
       </list>
@@ -295,15 +327,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="985" y="27" width="935" height="1053" extended-state="4" />
+    <frame x="51" y="27" width="1869" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2489154" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2488889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32967034" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32967034" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -324,19 +356,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Kmeans.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Kmeans.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Kmeans.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/GMM.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -430,17 +452,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/motified_data.csv">
+    <entry file="file://$PROJECT_DIR$/GMM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        <state relative-caret-position="357">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.7/site-packages/scipy/stats/_multivariate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10406">
+          <caret line="484" selection-start-line="484" selection-end-line="484" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Kmeans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" />
+        <state relative-caret-position="308">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <marker date="1541304207636" expanded="true" signature="853:854" ph="..." />
@@ -451,23 +483,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="909">
-          <caret line="126" column="18" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1541303067468" expanded="true" signature="470:471" ph="..." />
-            <marker date="1541303067468" expanded="true" signature="2363:2368" ph="..." />
-            <marker date="1541303067468" expanded="true" signature="2363:2413" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="57" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/motified_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
         </state>
       </provider>
     </entry>

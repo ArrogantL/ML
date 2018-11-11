@@ -23,7 +23,28 @@ def generateData(num,mean=100,var=0):
     D=[]
     for x,t,r in zip(X,T,R):
         D.append((x,t,r))
-    return D,X,T,R
+    return D
+
+def generateThiDimensionalData\
+                (num,featurenum=3):
+    """
+
+    :param vars:
+    :param means:
+    :param num:数据量
+    :return:
+    """
+    XX = []
+
+    mean = [1, 0, 0]
+    vars = [[100, 0, 0], [0, 10, 0], [0, 0.1, 0]]
+    for i in range(num):
+        XX.append(multivariate_normal(mean, vars))
+
+
+
+
+    return XX
 if __name__ == '__main__':
     D, X, T, R = generateData(500)
 
