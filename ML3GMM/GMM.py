@@ -1,139 +1,121 @@
-from numpy import *
-from numpy.linalg import det
-from sklearn.model_selection import train_test_split
-from matplotlib import *
-from numpy import *
-import pandas as pd
-from sklearn.model_selection import train_test_split
-
-from DataGenerator import generateTwoDimensionalData
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from scipy.stats import multivariate_normal
+from sklearn.model_selection import train_test_split
+from mpl_toolkits.mplot3d import Axes3D
 
+from DataGenerator import generateTwoDimensionalData,generateThiDimensionalData
 
-def gaussianMixtureModel(XX, k):
+def gaussianMixtureModel(XX, k, minincrement=10 ** -5,tag=True):
     """
-    使用kmeans方法讲一组向量XX聚为k类。
+    使用kmeans方法将一组向量XX聚为k类。
     :param XX:样本
     :param k:聚类数量
-    :return: 混合概率，各聚类高斯均值，各聚类高斯协方差阵=pk, means, vars
+    :param minincrement:E步最小增量，小于则停止迭代
+    :return: pk, means, vars    即 混合概率，各聚类高斯均值，各聚类高斯协方差阵
     """
     #  convert list X to column vector X
-    tmp = []
-
-    for X in XX:
-        tmp.append(mat(X).T)
-    XX = tmp
-    D = len(XX[0])
+    XX = np.array(XX)
+    len_X = len(XX[0])
     # start: random model:P(K) means vars,Attention：mean[i]!=mean[j] for any i!=j,
     # otherwise they will get the same parameters during the iteration.
-    means = [mat([i]*D).T for i in range(k)]
-    vars = [mat(eye(D))] * k
-    pk = [1 / k] * k
+    # labels, means_array = kmeans(XX.tolist(), k)
+
+    means_array=np.tile(np.random.random_sample(k), (len_X, 1)).T
+
+    vars_array = np.array([np.eye(len_X)] * k)
+    assert vars_array.shape == (k, len_X, len_X)
+    pk_array = np.ones(k) * (1.0 / k)
     # P(K|X) rowX columnK
-    pkx = [[0] * k] * len(XX)
-
+    pkx_array = np.zeros(len(XX) * k).reshape(len(XX), k)
     # start EM process
-    count=0
     while True:
-        count+=1
         # E: estimate P(K|X)
-        tmp = pkx
-        increment = 0
-        pkx = []
-        for i in range(len(XX)):
-            pkx.append([])
-            for j in range(k):
-                v = calPKX(pk, means, vars, XX[i], j)
-                pkx[i].append(v)
-                increment += abs(v - tmp[i][j])
+        tmp = pkx_array.copy()
+        pkx_array = recalPKX(pk_array, means_array, vars_array, XX)
         # increment is less than the threshold,return result
-        if increment<10**-5:
+        increment = np.sum(np.abs(pkx_array - tmp))
+        print(increment)
+        if increment < minincrement:
             break
-
         # M: max likehood with respect model:P(K) means vars
-        tmpmeans = []
-        tmpvars = []
-        tmppk = []
+        NK_array = np.sum(pkx_array, axis=0)
         for j in range(k):
-            Nk = 0
-            mean = mat(zeros(D)).T
-            var = mat(zeros((D, D)))
-            for i in range(len(XX)):
-                v = pkx[i][j][0, 0]
-                mean += v * XX[i]
-                Nk += v
-            for i in range(len(XX)):
-                delt = XX[i] - mean / Nk
-                var += pkx[i][j][0, 0] * delt * delt.T
-            tmpmeans.append(mean / Nk)
-            tmpvars.append(var / Nk)
-            tmppk.append(Nk / len(XX))
-        means = tmpmeans
-        vars = tmpvars
-        pk = tmppk
-
-    return pk, means, vars
+            means_array[j] = np.sum(np.tile(pkx_array[:, j], (len_X, 1)).T * XX, axis=0) / NK_array[j]
+        for j in range(k):
+            tmp = np.array([pkx_array[i, j] * (np.mat(XX[i] - means_array[j]).T * np.mat(XX[i] - means_array[j])).A for i in
+                            range(len(XX))])
+            assert tmp.shape == (len(XX), len_X, len_X)
+            vars_array[j] = np.sum(tmp, axis=0) / NK_array[j]
+            assert vars_array[j].shape == (len_X, len_X)
+    return pk_array, means_array, vars_array
 
 
-def calPKX(pk, means, vars, X, k):
+def recalPKX(pk, means, vars, XX):
     """
-    calculating P(K=k|X)
-    :param pk:blend weight
-    :param means:gaussians' means
-    :param vars:gaussians' variances
-    :param X:target sample
-    :param k:target class
-    :return:[[P(k|X)]]
+    E步重新计算类后验概率矩阵P（Y|X）
+    :param pk:
+    :param means:
+    :param vars:
+    :param XX:
+    :return: pkx_array
     """
-    assert k < len(pk)
-    pkx = 0
-    lgpxk = 0
-    lgpxilist = []
-    for i in range(len(pk)):
-        mean = means[i]
-        var = vars[i]
-        try:
-            # use log to ease overflow
-            assert linalg.det(var) >= 0
-            lgpxi = log(pk[i] * power((2 * math.pi), -len(X) / 2) * power(det(var), -1 / 2)) + (-1 / 2 * (X - mean).T * var.I * (X - mean))
-            lgpxilist.append(lgpxi)
-        except numpy.linalg.linalg.LinAlgError:
-            # matrix without inverse matrix
-            continue
-        if i == k :
-            lgpxk = lgpxi
-
-    for lgpxi in lgpxilist:
-        try:
-            pkx += exp(lgpxi - lgpxk)
-        except:
-            continue
-
-    pkx = 1 / pkx
-    if pkx[0, 0] == nan:
-        # 仍然可能存在溢出，这样的样本选择抛弃
-        pkx[0, 0] = 0
-    return pkx
+    logpxi_array = np.zeros(len(XX) * len(pk)).reshape(len(XX), len(pk))
+    pkx_array = np.zeros(len(XX) * len(pk)).reshape(len(XX), len(pk))
+    for j in range(len(XX)):
+        for i in range(len(pk)):
+            try:
+                logpxi_array[j, i] = multivariate_normal.logpdf(XX[j], mean=means[i], cov=vars[i]) + np.log(pk[i])
+            except:
+                print("Singular Matrix!!")
+    for k in range(len(pk)):
+        pkx_array[:, k] = np.sum(np.exp(logpxi_array - np.tile(logpxi_array[:, k], (len(pk), 1)).T), axis=1)
+    pkx_array = 1.0 / pkx_array
+    return pkx_array
 
 
 def twoDimensionalClusterDisplay():
-    clusternum=4
+    clusternum = 3
     # 二维划分展示
     XX, Y = generateTwoDimensionalData(num=200)
+    XX = np.array(XX)
+    XX_train_array = XX[len(XX) // 2:]
+    XX_test_array = XX[len(XX) // 2:]
+    # XX_test_array = XX[:len(XX) // 2]
     # 使用一半样本来训练
-    pk, means, vars = gaussianMixtureModel(XX[:len(XX) // 2], clusternum)
+    pk, means, vars = gaussianMixtureModel(XX_train_array, clusternum)
     # 绘制散点图
-    colors = ['blue','red', 'black', 'green']
-    labels = {}
-    for X in XX[len(XX) // 2:]:
-        X=mat(X).T
-        p, k = max((calPKX(pk, means, vars, X, k)[0, 0], k) for k in range(clusternum))
-        labels.setdefault(k, [])
-        labels[k].append(X)
-    for k in labels:
-        for X in labels[k]:
-            plt.scatter(X[0,0], X[1,0], s=75, c=colors[k], alpha=0.5)
+    colors = ['blue', 'red', 'black', 'green']
+    pkx_array = recalPKX(pk, means, vars, XX_test_array)
+    labels = np.argmax(pkx_array, axis=1)
+    assert len(labels) == len(XX_test_array)
+    plt.scatter(XX_test_array[:, 0], XX_test_array[:, 1], s=75, c=[colors[i] for i in labels], alpha=0.5)
     plt.show()
+def thiDimensionalClusterDisplay():
+    clusternum = 4
+    # 二维划分展示
+    XX, Y = generateThiDimensionalData(num=200,featurenum=clusternum)
+    XX = np.array(XX)
+    XX_train_array = XX[len(XX) // 2:]
+    XX_test_array = XX[len(XX) // 2:]
+    # XX_test_array = XX[:len(XX) // 2]
+    # 使用一半样本来训练
+    pk, means, vars = gaussianMixtureModel(XX_train_array, clusternum)
+    # 绘制散点图
+    colors = ['blue', 'red', 'black', 'green']
+    pkx_array = recalPKX(pk, means, vars, XX_test_array)
+    labels = np.argmax(pkx_array, axis=1)
+    assert len(labels) == len(XX_test_array)
+
+    ax = plt.subplot(111, projection='3d')  # 创建一个三维的绘图工程
+    ax.scatter(XX_test_array[:, 0], XX_test_array[:, 1],XX_test_array[:, 2], s=75, c=[colors[i] for i in labels], alpha=0.5 ) # 绘制数据点
+    ax.set_zlabel('Z')  # 坐标轴
+    ax.set_ylabel('Y')
+    ax.set_xlabel('X')
+    plt.show()
+
+
 
 
 def GMMandAnalyze(X_train, X_test, y_test, k):
@@ -145,21 +127,24 @@ def GMMandAnalyze(X_train, X_test, y_test, k):
     :param k:
     :return: pk, means, vars, TP(correct clustering in X_test:y_test)
     """
+    X_train=np.array(X_train)
+    X_test=np.array(X_test)
+    y_test = np.array(y_test)
     pk, means, vars = gaussianMixtureModel(X_train, k)
-    labels = {}
-    for X, y in zip(X_test, y_test):
-        X = mat(X).T
-        p, m = max((calPKX(pk, means, vars, X, m)[0, 0], m) for m in range(k))
-        labels.setdefault(m, [])
-        labels[m].append((X, y))
+    pkx_array = recalPKX(pk, means, vars, X_test)
+    labels = np.argmax(pkx_array, axis=1)
     TP = 0
-    for list in labels.values():
-        nums = {}
-        for X, y in list:
-            nums.setdefault(y, 0)
-            nums[y] += 1
-        num, y = max((nums[y], y) for y in nums)
-        TP += num
+    cluster={}
+    for i in range(len(labels)):
+        cluster.setdefault(labels[i],[])
+        cluster[labels[i]].append(i)
+    for v in cluster.values():
+        vy=y_test[v]
+        right=sorted(vy)[0]
+        for i in vy:
+            if i ==right:
+                TP+=1
+
 
     return pk, means, vars, TP
 
@@ -174,10 +159,10 @@ def processUCIheart():
     XX = data.iloc[:, 1:].values.tolist()
     X_train, X_test, y_train, y_test = train_test_split(XX, Y, test_size=0.25, random_state=0)  # 随机选择25%作为测试集，剩余作为训练集
 
-    pk, means, vars, TPtest = GMMandAnalyze(X_train, X_test, y_test, 3)
-    pk, means, vars, TPtrain = GMMandAnalyze(X_train, X_train, y_train, 3)
-    print("TPtrain,TPtest,len(X_train),len(X_test)=",TPtrain,TPtest,len(X_train),len(X_test))
-    # TPtrain,TPtest,len(X_train),len(X_test)= 98 35 112 38
+    pk, means, vars, TPtest = GMMandAnalyze(X_train, X_test, y_test, 4)
+    pk, means, vars, TPtrain = GMMandAnalyze(X_train, X_train, y_train, 4)
+    print("TPtrain,TPtest,len(X_train),len(X_test)=", TPtrain, TPtest, len(X_train), len(X_test))
+    # TPtrain,TPtest,len(X_train),len(X_test)= 80 35 112 38
 
 def preprocessData():
     """
@@ -186,7 +171,9 @@ def preprocessData():
     data = pd.read_csv("data/iris.csv")
     data.to_csv("data/motified_data.csv")
 
+
 if __name__ == '__main__':
-    # preprocessData()
-    processUCIheart()
+    # 测试说明：下面三条分别展示UCI数据、二维、三维数据的GMM效果
+    # processUCIheart()
     # twoDimensionalClusterDisplay()
+    thiDimensionalClusterDisplay()

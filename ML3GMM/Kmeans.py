@@ -1,5 +1,5 @@
 from numpy import *
-
+import numpy as np
 from DataGenerator import generateTwoDimensionalData
 import matplotlib.pyplot as plt
 
@@ -25,10 +25,9 @@ def kmeans(XX,clusternum):
         for l in labels:
             if labels[l]!=tmp[l]:
                 flag=False
-        print(flag)
         count+=1
         if flag and count>10:
-            return labels
+            return labels,np.array(KK)
         #重新计算聚点
         KK =recalClusterPoint(XX,labels,clusternum)
 
@@ -63,12 +62,12 @@ def recalClusterPoint(XX,Labels,clusternum):
 if __name__ == '__main__':
     clusternum=4
     XX, Y = generateTwoDimensionalData(200)
-    Labels=kmeans(XX,clusternum)
+    labels,means=kmeans(XX, clusternum)
     # 计算颜色值
     #color = np.arctan2(y, x)
     # 绘制散点图
     colors=['red','yellow','green','black']
-    for k in Labels:
-        for i in Labels[k]:
+    for k in labels:
+        for i in labels[k]:
             plt.scatter(XX[i][0],XX[i][1], s=75, c=colors[k], alpha=0.5)
     plt.show()
