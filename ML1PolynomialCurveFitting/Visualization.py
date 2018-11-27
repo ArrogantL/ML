@@ -5,11 +5,17 @@ import numpy
 from numpy import polyval, math, sin
 
 
+"""
+图形可视化。不属于实验内容
+"""
 def visualPoly(*WsandLabels,X=[],T=[],title="Data Graph",savePath="None",isShow=False):
     """
-    多曲线展示，可添加样本点
+    多曲线展示，默认增加sin2pix曲线。可添加样本点
     :param WsandLabels: 按次数由低到高排列，先W，全部W输入后接入按顺序接入labels
-    :return:
+    :param X,T: 样本
+    :param title: 图像标题
+    :param savePath: 保存路径
+    :param  isShow: 是否展示图像
     """
     t=len(WsandLabels)//2
     print(len(WsandLabels))
@@ -38,6 +44,13 @@ def visualPoly(*WsandLabels,X=[],T=[],title="Data Graph",savePath="None",isShow=
 
 
 def visualResultAndSampleAndTarget(W,X,T):
+    """
+    适用于单曲线的简单可视化，功能不如visualPoly强大
+    :param W:
+    :param X:
+    :param T:
+    :return:
+    """
     x = numpy.arange(0, 1, 0.001)
     s = list(W)
     s.reverse()

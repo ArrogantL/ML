@@ -9,10 +9,11 @@ from Visualization import visualPoly, visualResultAndSampleAndTarget
 
 def analyticalSolve(n, X, T, lnLambada=None):
     '''
+    解析解法
     :param n:多项式次数
     :param X:样本自变量x
     :param T:样本因变量t
-    :param lnLambada:  lambada的以自然数为底的对数，如果设为1000则表示不设只lambada
+    :param lnLambada:  lambada的以自然数为底的对数，如果设为None则表示lambada=0
     :return: 解析解拟合的次数由低到高的权重向量
     '''
     lenW = n + 1

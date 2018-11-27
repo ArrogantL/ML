@@ -2,7 +2,7 @@ from math import sin, pi
 
 import matplotlib.pyplot as plt
 import numpy as np
-from numpy.random import *
+
 
 def generateData(num):
     X=np.random.rand(num)

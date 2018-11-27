@@ -6,7 +6,9 @@ from DataGenerator import generateData
 from GradientDescent import RSS, gradientDescent
 from Visualization import visualPoly
 
-
+"""
+生产图像，非完善代码。
+"""
 def solutionTest(func,ns, dataNum, lnLambdas=[],SavePath=""):
     list=[]
     for i in ns:

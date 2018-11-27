@@ -8,9 +8,9 @@ from DataGenerator import generateData
 from Visualization import visualResultAndSampleAndTarget, visualPoly
 
 
-def gradientDescent(n, X, T, lr, batch=1, lnLambada=None,maxItrTimes=10, targetAverageRSS=5 * 10 ** -4):
+def gradientDescent(n, X, T, lr, batch=1, lnLambada=None, maxItrTimes=10, targetAverageRSS=5 * 10 ** -4):
     """
-    梯度下降法多项式拟合
+    MBGD梯度下降法多项式拟合
     :param n:
     :param X:
     :param T:
@@ -38,8 +38,8 @@ def gradientDescent(n, X, T, lr, batch=1, lnLambada=None,maxItrTimes=10, targetA
             batchT.append(t)
             count += 1
             if count % batch == 0:
-                gradient = getGradient(batchT, W, batchX)
-                W = [w +w*lambada/batch+ lr * g / batch for w, g in zip(W, gradient)]
+                gradient = getGradient(batchT, W, batchX,lambada)
+                W = [w + lr * g / batch for w, g in zip(W, gradient)]
                 rss = RSS(T, X, W, range=10, isaverage=True)
 
                 if rss <= targetAverageRSS:
@@ -52,7 +52,7 @@ def gradientDescent(n, X, T, lr, batch=1, lnLambada=None,maxItrTimes=10, targetA
     return rss, W
 
 
-def getGradient(T, W, X):
+def getGradient(T, W, X, lambada):
     W.reverse()
     rW = [0 for w in W]
     for t, x in zip(T, X):
@@ -60,7 +60,7 @@ def getGradient(T, W, X):
         k = t - val
         rW = [rw + k * m for rw, m in zip(rW, logspace(0, len(W) - 1, len(W), base=x))]
     W.reverse()
-
+    rW = [rw + rw * lambada for rw in rW]
     return rW
 
 
@@ -104,14 +104,14 @@ def RSS(T, X, W, range=-1, isaverage=False):
 if __name__ == '__main__':
     dataNum = 10
     n = 9
-    lr = 0.00001
+    lr = 0.5
     maxItrTimes = sys.maxsize
     batch = dataNum
-    lnLambda=-5
+    lnLambda = 0
     X, T = generateData(dataNum)
 
-    e, resultW = gradientDescent(n, X, T, lr,lnLambada=lnLambda, batch=batch,
+    e, resultW = gradientDescent(n, X, T, lr, lnLambada=lnLambda, batch=batch,
                                  maxItrTimes=maxItrTimes)
-    visualPoly(resultW,"λ e^%.0f"%(lnLambda), X=X, T=T,
+    visualPoly(resultW, "λ e^%.0f" % (lnLambda), X=X, T=T,
                title="%s poly%d datanum%d lr%.3f batch%d" % ("gradientDescent", n, dataNum, lr, batch), isShow=True,
                savePath="DataGif/GradientDescent/")

@@ -1,21 +1,21 @@
 import math
-
+from Visualization import visualResultAndSampleAndTarget
+import matplotlib.pyplot as plt
 import numpy
-from numpy import mat, zeros
+from numpy import mat, polyval, zeros
 
 from DataGenerator import generateData
-from Visualization import visualResultAndSampleAndTarget
 
 
 def conjugateGradient(n, X, T, lnLambada=None, limit=0.00000001, MaxIterationNum=100):
     """
+    共轭梯度下降
     :param n 多项式次数
     :param X: 训练数据x
     :param T: 训练数据t
     :param limit:  当残差r=B-AW的内积rT*r小于limit时停止迭代
     :param lnLambada 惩罚参数的以e为底的对数，控制岭回归惩罚力度，若取None则不带惩罚项
     :param MaxIterationNum: 最大迭代次数
-
     :return: 次数由低到高的权重向量，迭代次数
     """
     lenW = n + 1
@@ -51,6 +51,6 @@ if __name__ == '__main__':
     X, T = generateData(10)
     W, num = conjugateGradient(9, X, T, lnLambada=None)
 
-    visualResultAndSampleAndTarget(W, X, T)
+    visualResultAndSampleAndTarget(W,X,T)
     # plt.plot(X, T, 'r*', linewidth=2)
 # plt.show()

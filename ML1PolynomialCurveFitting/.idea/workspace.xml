@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45ece982-2a48-473c-b85a-8ccc7edf5de7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/BUGS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/DataGenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/Mnist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/PCA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ML4PCA/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML2LogisticRegress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML2LogisticRegress/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ML3GMM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ML3GMM/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="45ece982-2a48-473c-b85a-8ccc7edf5de7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,41 +51,68 @@
     <session id="-375370280">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="38" />
-          <entry key="py" value="18" />
+          <entry key="py" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="38" />
-          <entry key="Python" value="18" />
+          <entry key="Python" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="py" value="1547" />
+          <entry key="py" value="1546" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Python" value="1547" />
+          <entry key="Python" value="1546" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1109871391">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="png" value="29" />
+          <entry key="py" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="29" />
+          <entry key="Python" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="353" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="353" />
         </counts>
       </usages-collector>
     </session>
@@ -104,51 +120,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="36" column="55" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1537877466535" expanded="true" signature="296:1339" ph="..." />
-                <marker date="1537877466535" expanded="true" signature="1338:1339" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGenerator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConjugateGradient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GradientDescent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
-              <caret line="100" column="14" selection-start-line="87" selection-end-line="100" selection-end-column="14" />
+            <state relative-caret-position="218">
+              <caret line="89" column="15" selection-end-line="117" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#1671#2125#0" />
               </folding>
             </state>
           </provider>
@@ -157,37 +134,79 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Visualization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="42" />
+            <state relative-caret-position="57">
+              <caret line="7" selection-start-line="7" selection-end-line="61" selection-end-column="14" />
+              <folding>
+                <element signature="e#195#1048#0" />
+                <element signature="e#195#293#1" />
+                <element signature="e#542#717#0" />
+                <element signature="e#1221#1530#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly5 datanum20.png">
+        <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr0.500 batch5.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly7 datanum5.png">
+        <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly15 datanum5.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly9 datanum5.png">
+        <entry file="file://$PROJECT_DIR$/DataGenerator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="20" column="20" selection-end-line="21" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum10 lr0.900 batch10.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly15 datanum20.png">
+        <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum10 lr1.000 batch10.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AnalyticalSolution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="-32">
+              <caret line="10" column="7" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConjugateGradient.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="14" column="17" selection-end-line="56" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -227,20 +246,19 @@
       <list>
         <option value="$PROJECT_DIR$/s/__init__.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/DataTest.py" />
-        <option value="$PROJECT_DIR$/Visualization.py" />
+        <option value="$PROJECT_DIR$/DataGenerator.py" />
+        <option value="$PROJECT_DIR$/ConjugateGradient.py" />
         <option value="$PROJECT_DIR$/AnalyticalSolution.py" />
         <option value="$PROJECT_DIR$/GradientDescent.py" />
-        <option value="$PROJECT_DIR$/ConjugateGradient.py" />
-        <option value="$PROJECT_DIR$/DataGenerator.py" />
+        <option value="$PROJECT_DIR$/Visualization.py" />
+        <option value="$PROJECT_DIR$/DataTest.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="51" />
-    <option name="y" value="27" />
-    <option name="width" value="915" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="85" />
+    <option name="width" value="929" />
+    <option name="height" value="1088" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -275,7 +293,8 @@
             </path>
             <path>
               <item name="ML1PolynomialCurveFitting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="ML1PolynomialCurveFitting" type="462c0819:PsiDirectoryNode" />
+              <item name="DataGif" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,7 +303,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/software/Anaconda" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -312,7 +331,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ConjugateGradient">
+  <component name="RunManager" selected="Python.GradientDescent">
     <configuration name="AnalyticalSolution" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ML1PolynomialCurveFitting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -427,11 +446,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ConjugateGradient" />
         <item itemvalue="Python.GradientDescent" />
         <item itemvalue="Python.AnalyticalSolution" />
         <item itemvalue="Python.Visualization" />
         <item itemvalue="Python.DataTest" />
+        <item itemvalue="Python.ConjugateGradient" />
       </list>
     </recent_temporary>
   </component>
@@ -458,22 +477,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="27" width="915" height="1053" extended-state="4" />
-    <editor active="true" />
+    <frame x="68" y="0" width="743" height="870" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27865168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3606789" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49891305" weight="0.32857144" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49791667" visible="true" weight="0.33197832" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989011" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32932165" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50108695" side_tool="true" weight="0.32932165" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50208336" side_tool="true" weight="0.32841823" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -491,55 +509,81 @@
           <line>114</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Visualization.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/numpy/linalg/linalg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="531" selection-start-line="531" selection-end-line="531" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/numpy/matrixlib/defmatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="830" selection-start-line="830" selection-end-line="830" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum10.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly15 datanum10.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly15 datanum20.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum5.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum10.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum20.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly7 datanum5.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly7 datanum10.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly15 datanum5 lr0.001000 maxit100.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum5 lr0.001000 maxit100.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum10 lr0.001000 maxit100.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum20 lr0.001000 maxit100.png" />
     <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly7 datanum5 lr0.001000 maxit100.png" />
     <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly7 datanum10 lr0.001000 maxit100.png" />
     <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/Data Graph.png" />
-    <entry file="file:///usr/lib/python3.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="392" selection-start-line="392" selection-end-line="392" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/python3.7/site-packages/matplotlib/axes/_base.py" />
     <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr1.000 maxIrt100 batch1.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.500 maxIrt100 batch1.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.300 maxIrt100 batch1.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.010 maxIrt100 batch10.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.010 maxIrt100 batch1.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.600 maxIrt100 batch1.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.010000 maxIrt100 batch10.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr10.000 maxIrt100 batch1.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr1.000 maxIrt100 batch5.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly15 datanum5.png" />
+    <entry file="file:///usr/lib/python3.7/site-packages/numpy/lib/polynomial.py" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/&lt;function gradientDescent at 0x7f38dfa921e0&gt; poly9 datanum5 lr1.100 batch5.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly5 datanum5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly5 datanum10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly5 datanum20.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly9 datanum5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly9 datanum10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly9 datanum20.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly7 datanum5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly7 datanum10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly7 datanum20.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly15 datanum20.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly15 datanum10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly9 datanum20.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly5 datanum10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly5 datanum20.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly7 datanum5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly7 datanum10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly7 datanum20.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly9 datanum5.png">
@@ -551,55 +595,28 @@
     <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly5 datanum5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly9 datanum10.png">
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr1.100 batch5.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum10 lr1.100 batch10.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr0.100 batch5.png" />
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr1.000 batch5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly9 datanum20.png">
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr0.500 batch5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.500 maxIrt100 batch1.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.300 maxIrt100 batch1.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.010 maxIrt100 batch10.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.010 maxIrt100 batch1.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.600 maxIrt100 batch1.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr0.010000 maxIrt100 batch10.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly5 datanum100 lr10.000 maxIrt100 batch1.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr1.000 maxIrt100 batch5.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly15 datanum5.png" />
-    <entry file="file:///usr/lib/python3.7/site-packages/numpy/lib/polynomial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="669" column="13" lean-forward="true" selection-start-line="669" selection-start-column="13" selection-end-line="669" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/&lt;function gradientDescent at 0x7f38dfa921e0&gt; poly9 datanum5 lr1.100 batch5.png" />
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum10 lr1.100 batch10.png">
+    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly15 datanum5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum5 lr1.100 batch5.png">
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum10 lr0.900 batch10.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly7 datanum20.png">
+    <entry file="file://$PROJECT_DIR$/DataGif/GradientDescent/gradientDescent poly9 datanum10 lr1.000 batch10.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="36" column="55" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1537877466535" expanded="true" signature="296:1339" ph="..." />
-            <marker date="1537877466535" expanded="true" signature="1338:1339" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConjugateGradient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="57">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -608,31 +625,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GradientDescent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="100" column="14" selection-start-line="87" selection-end-line="100" selection-end-column="14" />
+        <state relative-caret-position="218">
+          <caret line="89" column="15" selection-end-line="117" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1671#2125#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly5 datanum20.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly7 datanum5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/AnalyticalSolve/analyticalSolve poly9 datanum5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGif/conjugateGradient/conjugateGradient poly15 datanum20.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/AnalyticalSolution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="-32">
+          <caret line="10" column="7" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConjugateGradient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="14" column="17" selection-end-line="56" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -641,8 +655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="380">
+          <caret line="20" column="20" selection-end-line="21" selection-end-column="14" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
@@ -651,8 +665,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Visualization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="42" />
+        <state relative-caret-position="57">
+          <caret line="7" selection-start-line="7" selection-end-line="61" selection-end-column="14" />
+          <folding>
+            <element signature="e#195#1048#0" />
+            <element signature="e#195#293#1" />
+            <element signature="e#542#717#0" />
+            <element signature="e#1221#1530#0" />
+          </folding>
         </state>
       </provider>
     </entry>
