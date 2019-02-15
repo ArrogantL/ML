@@ -96,6 +96,8 @@ def sortsort():
     topdvects = vects[:, indexs]
     pass
 
+def test9():
+    print(np.zeros((5,1)))
 if __name__ == '__main__':
     # test1()
     # test2()
@@ -104,4 +106,5 @@ if __name__ == '__main__':
     # test5()
     # test6()
     # test7()
-    test8()
+    # test8()
+    test9()
